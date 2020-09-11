@@ -21,6 +21,7 @@ Route::namespace('Admin')->group(function () {
     Route::prefix('admin')->group(function () {
         Auth::routes();
         Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/user', 'UserController@userList')->name('userList');
     });
 });
 
