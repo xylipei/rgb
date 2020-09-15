@@ -1,5 +1,11 @@
 @extends('admin.layouts.app')
 
+@section('title', '统计')
+
+@section('breadcrumb')
+    {{ Breadcrumbs::render('home') }}
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->

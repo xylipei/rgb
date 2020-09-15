@@ -20,13 +20,13 @@ Route::get('/', function () {
 Route::namespace('Admin')->group(function () {
     Route::prefix('admin')->group(function () {
         Auth::routes();
-        Route::get('/', 'HomeController@index')->name('home');
-        Route::get('/user', 'UserController@userList')->name('userList');
+        Route::middleware(['auth'])->group(function () {
+            Route::get('/', 'HomeController@index')->name('home');
+            Route::get('/user', 'UserController@userList')->name('userList');
+        });
     });
 });
 
 Route::namespace('Index')->group(function () {
 
 });
-
-
